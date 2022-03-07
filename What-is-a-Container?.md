@@ -1,13 +1,13 @@
-What is a container?
+##What is a container?
 Lightweight packages of application code together bound together with dependencies such as specific version of programming language runtimes and libraries required to run your software services.
 
-What's the benefits of containers?
+##What's the benefits of containers?
 Seperation of responsibility, workload portability and application isolation(virtualize CPU, memory, storage and network resources)
 
-What are containers made of?
+##What are containers made of?
 Containers are made up of Cgroups and namespaces
 
-What are Cgroups and namespaces?
+##What are Cgroups and namespaces?
 There are great resources(https://jvns.ca/blog/2016/10/10/what-even-is-a-container/) out there on this but let me summarize below
   Namespaces -> process's should be separated from other process.
     PID namespace - Become PID1 and then children are your processes
