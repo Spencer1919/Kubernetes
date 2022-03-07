@@ -9,22 +9,24 @@ Containers are made up of Cgroups and namespaces
 
 ##What are Cgroups and namespaces?
 There are great resources(https://jvns.ca/blog/2016/10/10/what-even-is-a-container/) out there on this but let me summarize below
-  Namespaces -> process's should be separated from other process.
-    PID namespace - Become PID1 and then children are your processes
-    Networking namespace -> You can run programs on any port you want without conflicting what's already there.
-    Mount Namespace -> mount and unmount filesystems without affecting host filesystem
 
-    Cgroups (resource limits) -> Limiting CPU, networking bandwidth, IO or memory of what one of your programs are you using
+  ###Namespaces -> process's should be separated from other process.
+    1. PID namespace - Become PID1 and then children are your processes
+    2. Networking namespace -> You can run programs on any port you want without conflicting what's already there.
+    3. Mount Namespace -> mount and unmount filesystems without affecting host filesystem
 
-What is a container image?(reference: https://kubernetes.io/docs/concepts/containers/)
+  ###Cgroups (resource limits) -> Limiting CPU, networking bandwidth, IO or memory of what one of your programs are you using
+
+##What is a [Container Image?](reference: https://kubernetes.io/docs/concepts/containers/)
 Ready-to-run software package containing everything needed to run an application: code and any runtime it requires, application and system libraries, and default values for any essential settings. By design, it's immutable and a new image must be built.
 
-What is a Container runtime?(reference: https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
+##What is a [Container runtime?](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
 Software that is responsible for running a containers.
 
 
-What is Container Runtime interface?(Reference: https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
-Kubelet (grpc client)<-> CRI SHIM(grpc server) <-> container runtime ->>> container(s)
+##What is [Container Runtime interface?](Reference: https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
+
+1. Kubelet (grpc client)<-> CRI SHIM(grpc server) <-> container runtime ->>> container(s)
   Kubelet communicates with the container runtime over unix sockets using the gRPC framework, where kubelet acts as a client and the CRI shim as the server.
   ImageService provides RPC's to pull in an image from a repository, inspect, and remove an image.
   Runtimeservice containers RPC's to manage the lifecycle of the pods, containers and interact with containers(exec/attach/port-forward)
