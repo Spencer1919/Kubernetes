@@ -1,32 +1,32 @@
-# What exactly is a container?
+# What exactly is a container!
 
-## What is a container?
+### What is a container?
 Lightweight packages of application code together bound together with dependencies such as specific version of programming language runtimes and libraries required to run your software services.
 
-## What's the benefits of containers?
+### What's the benefits of containers?
 Seperation of responsibility, workload portability and application isolation(virtualize CPU, memory, storage and network resources)
 
-## What are containers made of?
+### What are containers made of?
 Containers are made up of Cgroups and namespaces
 
-## What are Cgroups and namespaces?
+### What are Cgroups and namespaces?
 There are [great resources](https://jvns.ca/blog/2016/10/10/what-even-is-a-container/) out there on this but let me summarize below
 
-  ###Namespaces -> process's should be separated from other process.
-    1. PID namespace - Become PID1 and then children are your processes
-    2. Networking namespace -> You can run programs on any port you want without conflicting what's already there.
-    3. Mount Namespace -> mount and unmount filesystems without affecting host filesystem
+  - Namespaces = process's should be separated from other process.
+    - PID namespace - Become PID1 and then children are your processes
+    - Networking namespace -> You can run programs on any port you want without conflicting what's already there.
+    - Mount Namespace -> mount and unmount filesystems without affecting host filesystem
 
-  ###Cgroups (resource limits) -> Limiting CPU, networking bandwidth, IO or memory of what one of your programs are you using
+  - Cgroups (resource limits) = Limiting CPU, networking bandwidth, IO or memory of what one of your programs are you using
 
-## What is a [Container Image?](reference: https://kubernetes.io/docs/concepts/containers/)
+### What is a [Container Image?](reference: https://kubernetes.io/docs/concepts/containers/)
 Ready-to-run software package containing everything needed to run an application: code and any runtime it requires, application and system libraries, and default values for any essential settings. By design, it's immutable and a new image must be built.
 
-## What is a [Container runtime?](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
+### What is a [Container runtime?](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
 Software that is responsible for running a containers.
 
 
-## What is [Container Runtime interface?](Reference: https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
+### What is [Container Runtime interface?](Reference: https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
 
 1. Kubelet (grpc client)<-> CRI SHIM(grpc server) <-> container runtime ->>> container(s)
   - Kubelet communicates with the container runtime over unix sockets using the gRPC framework, where kubelet acts as a client and the CRI shim as the server.
@@ -36,7 +36,7 @@ Software that is responsible for running a containers.
   - To delete the pod, kubelet will stop and remove containers before stopping and removing the PodSandbox.
   - Kubelet is responsible for managing the lifecycles of the containers through the RPC's, exercising the container lifecycles hooks and liveness/readiness/startup checks.
 
-## How to [create a container?](https://medium.com/@arpitkh96/basics-of-container-networking-with-linux-part-1-3a3cdc64c87a)
+### How to [create a container?](https://medium.com/@arpitkh96/basics-of-container-networking-with-linux-part-1-3a3cdc64c87a)
 
   ```
   #/bin/bash
