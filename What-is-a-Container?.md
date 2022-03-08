@@ -26,7 +26,7 @@ Ready-to-run software package containing everything needed to run an application
 Software that is responsible for running a containers.
 
 
-### What is [Container Runtime interface?](Reference: https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
+### What is [Container Runtime interface?](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
 
 1. Kubelet (grpc client)<-> CRI SHIM(grpc server) <-> container runtime ->>> container(s)
   - Kubelet communicates with the container runtime over unix sockets using the gRPC framework, where kubelet acts as a client and the CRI shim as the server.
