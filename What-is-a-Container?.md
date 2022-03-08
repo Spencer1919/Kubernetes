@@ -1,3 +1,5 @@
+#What exactly is a container?
+
 ##What is a container?
 Lightweight packages of application code together bound together with dependencies such as specific version of programming language runtimes and libraries required to run your software services.
 
@@ -27,14 +29,14 @@ Software that is responsible for running a containers.
 ##What is [Container Runtime interface?](Reference: https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
 
 1. Kubelet (grpc client)<-> CRI SHIM(grpc server) <-> container runtime ->>> container(s)
-  Kubelet communicates with the container runtime over unix sockets using the gRPC framework, where kubelet acts as a client and the CRI shim as the server.
-  ImageService provides RPC's to pull in an image from a repository, inspect, and remove an image.
-  Runtimeservice containers RPC's to manage the lifecycle of the pods, containers and interact with containers(exec/attach/port-forward)
-  PodSandbox -> Before starting a pod, kubelet calls RuntimeService to create the environment. This includes setting up networking for a pod(allocating IP). Once PodSandbox is active, indvidual containers can be created/started/stopped/removed indepdently.
-  To delete the pod, kubelet will stop and remove containers before stopping and removing the PodSandbox.
-  Kubelet is responsible for managing the lifecycles of the containers through the RPC's, exer4cising the container lifecycles hooks and liveness/readiness/startup checks.
+  1. Kubelet communicates with the container runtime over unix sockets using the gRPC framework, where kubelet acts as a client and the CRI shim as the server.
+  2. ImageService provides RPC's to pull in an image from a repository, inspect, and remove an image.
+  3. Runtimeservice containers RPC's to manage the lifecycle of the pods, containers and interact with containers(exec/attach/port-forward)
+  4. PodSandbox -> Before starting a pod, kubelet calls RuntimeService to create the environment. This includes setting up networking for a pod(allocating IP). Once PodSandbox is active, indvidual containers can be created/started/stopped/removed indepdently.
+  5. To delete the pod, kubelet will stop and remove containers before stopping and removing the PodSandbox.
+  6. Kubelet is responsible for managing the lifecycles of the containers through the RPC's, exercising the container lifecycles hooks and liveness/readiness/startup checks.
 
-How to create a container?(ref: https://medium.com/@arpitkh96/basics-of-container-networking-with-linux-part-1-3a3cdc64c87a)
+##How to [create a container?](https://medium.com/@arpitkh96/basics-of-container-networking-with-linux-part-1-3a3cdc64c87a)
 
   Code below.
   #/bin/bash
