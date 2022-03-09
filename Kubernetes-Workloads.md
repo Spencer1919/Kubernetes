@@ -5,6 +5,20 @@ A workload is an application running on Kubernetes, whether a single component o
 ## [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 Pods are the smallest deployable units of computing that you can create/manage in K8s. It's a group of one or more containers with shared storage, network resources and a specification for how to run with conatiners.
 
+- Pods can run a single container
+- Pods can run multiple containers that need to work together.
+  - Example: one container serving  data stored in a shared volume while a sidecar container  refreshes or updates those files.
+- Pods have init containers and app containers as well.
+  - init containers run and complete before the app containers are started.
+- Static Pods - managed directly by  the kubelet daemon on a specific node without API server observing them. They are bound to the kubelet and main use is to run a self-hosted control plane; hence, why most control plane components are static pods.
+- Container Probes = diagnostic performed periodically by the kubelet on ta container.
+
+### [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+Pods are considered ephemeral(not durable entities) They do not self heal, K8s uses controllers to handle the work of managing the disposable pod instances.
+
+
+
+
 ## [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 Replicaset's core purpose is to maintain a stable set of replica pods running at any given time.
 
@@ -46,4 +60,4 @@ Define tasks that run to completion and then stop. Jobs represent one-off tasks,
 
 
 ## [Custom Resource definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
-Custom resources are extensions of the K8s API. It's not necessarily available in a default K8s extension and represents a customization of K8s installation. 
+Custom resources are extensions of the K8s API. It's not necessarily available in a default K8s extension and represents a customization of K8s installation.

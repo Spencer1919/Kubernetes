@@ -6,7 +6,7 @@ The overarching goal of this repository GitHub is to provide a braindump of all 
 Kubernetes is a portable, extensible, open-source platform for managing  containerized workloads and services, it facilitates declarative configuration and automation.
 
 ## K8s components
-A K8s cluster consistents of compoenents that represent control plane and DataPlane
+A K8s cluster consistent of components that represent control plane and DataPlane
 
 ## K8s objects
 K8s objects are persistent entities in the K8s system. K8s uses these entities to represent the state of your cluster. 
