@@ -19,8 +19,7 @@ An abstract way to expose an application running on a set of pods as a network s
   - A service can map any incoming port to a target port.
   - In the example below, suppose you have a set of pods that listen to port 9376 and have the label app=MyApp. This service targets any port that meets the below specs.
 
-'''
-
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -32,8 +31,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 9376
-
-'''
+```
 
 - Services without selectors:
   - You'd like an external dab cluster in production but you use your own db's in a test environment
@@ -49,8 +47,9 @@ There are various Service types out there that allow you to specify which you wo
 - Ingress: you can use Ingress to expose your Service though it's not a service type. It's an entry point for your cluster, consider routing rules and exposes multiple services via single IP.
 
 #### LoadBalancer Example
-Traffic from external load balancer is directed towards backend pods. Cloud Provider dictates how it's load balanced. 
-'''
+Traffic from external load balancer is directed towards backend pods. Cloud Provider dictates how it's load balanced.
+
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -68,4 +67,4 @@ status:
   loadBalancer:
     ingress:
     - ip: 192.0.2.127
-'''
+```
