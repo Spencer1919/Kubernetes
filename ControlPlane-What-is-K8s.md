@@ -21,5 +21,5 @@ Examples of Controllers:
 - Endpoints Controller: Populates the Endpoints object( that is, joins Services & pods)
 - Service Account & token controller: Creates dfault accounts and API access tokens for new namespaces
 
-### cloud-controller-manager
-Control Plane compoenent that embeds a cloud-specific(AWS, GCP, Azure etc.) control logic. Essentially, it allows you to link your cluster to your cloud providers API and seperates compoenents that interact with the cloud platform from components that interact with your cluster. 
+### [cloud-controller-manager]()
+Control Plane compoenent that embeds a cloud-specific(AWS, GCP, Azure etc.) control logic. Essentially, it allows you to link your cluster to your cloud providers API and seperates compoenents that interact with the cloud platform from components that interact with your cluster.
