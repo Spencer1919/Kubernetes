@@ -82,3 +82,19 @@ Software that is responsible for running a containers.
   ip addr add 10.0.0.1/24 dev br0
   ip link set dev br0 up
   ```
+
+## Docker basics
+### What is Docker?
+Open source containerizaton platform
+
+### [Cheat Sheet how to Docker](https://github.com/wsargent/docker-cheat-sheet#prerequisites)
+- Build:
+  - docker build -t myimage:1.0
+  - Docker image ls
+  - Docker image rm alpine:3.4
+- Run:
+  - docker container run --name web -p 5000:80 alpine:3.9
+  - docker container stop web
+  - docker container kill web
+  - docker network ls
+  - docker container logs --tail 100 web
